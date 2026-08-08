@@ -1,0 +1,3 @@
+[submodule "umami"]
+	path = umami
+	url = https://github.com/umami-software/umami.git
