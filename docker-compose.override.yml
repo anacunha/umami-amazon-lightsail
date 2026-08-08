@@ -1,0 +1,28 @@
+services:
+  umami:
+    environment:
+      DATABASE_URL: postgresql://umami:${POSTGRES_PASSWORD}@db:5432/umami
+      APP_SECRET: ${APP_SECRET}
+
+  db:
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+  caddy:
+    image: caddy:2
+    environment:
+      DOMAIN: ${DOMAIN} # passed through to the container so the Caddyfile's {$DOMAIN} can read it
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - umami
+    restart: always
+
+volumes:
+  caddy_data:
+  caddy_config:
