@@ -85,7 +85,9 @@ Open `https://analytics.yourdomain.com` and log in with `admin` / `umami`.
 
 > ⚠️ **Change the password now.** The default login is the same on every Umami install.
 
-For changing the password, adding sites to track, and everything else in the dashboard, see [Umami's own docs](https://umami.is/docs).
+- Change your password: https://docs.umami.is/docs/login
+- Add a website to track: https://docs.umami.is/docs/add-a-website
+- Add the tracking script to your site: https://docs.umami.is/docs/collect-data
 
 ## Updating
 
