@@ -91,9 +91,7 @@ Open `https://analytics.yourdomain.com` and log in with `admin` / `umami`.
 
 ## Updating
 
-Dependabot (`.github/dependabot.yml`) opens a pull request whenever Umami's submodule has new commits. Merge that PR to bump the pinned version.
-
-To deploy an update, on the instance:
+On the instance:
 
 ```
 cd ~/umami-deploy
@@ -104,4 +102,6 @@ docker compose pull
 docker compose up -d --force-recreate
 ```
 
-Postgres data lives in a named Docker volume, not in this repo. It's unaffected by `--force-recreate` or by updating Umami's version.
+Your data isn't affected by this update.
+
+If you forked this repo, Dependabot opens a pull request on your fork whenever Umami has new commits. Merge it, then run the steps above to deploy the update.
